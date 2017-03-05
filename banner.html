@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Template</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $(function() {
+                $("#generate").click(function() {
+
+                    var slogan = $("#slogan").val();
+                    var textSize = $("#textSize").val();
+                    var borderColor = $("#borderColor").val();
+                    var userColor = $("#userColor").val();
+                    var userBGC = $("#userBGC").val();
+                    $("#text").html(slogan);
+                    $("#banner").css("font-size", textSize + "px");
+                    $("#banner").css("border", borderColor + " 10px solid");
+                    $("#banner").css("color", userColor);
+                    $("#banner").css("background-color", userBGC);
+
+                });
+            });
+        });
+    </script>
+    <style>
+        .center {
+            text-align: center;
+            line-height: 280px;
+        }
+        
+        #banner {
+            position: relative;
+            width: 500px;
+            height: 350px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="banner">
+
+        <p class="center" id="text"></p>
+
+    </div>
+    <form>
+        Border Color:<br>
+        <input type="text" id="borderColor" name="borderColor"><br> Size of text:<br>
+        <input type="text" id="textSize" name="textSize"><br> Slogan:
+        <br>
+        <input type="text" id="slogan" name="slogan"><br>
+        Text color:<br>
+        <input type="text" id="userColor" name="userColor"><br>
+        
+        Background color:<br>
+        <input type="text" id="userBGC" name="userBGC"><br>
+        <br>
+        <button type="button" id="generate">Generate</button>
+
+    </form>
+    <br>
+
+</body>
+
+</html>
